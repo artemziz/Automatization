@@ -1,0 +1,24 @@
+{
+    "name": "Automatization",
+    "version": "1.0",
+    "description": "Automatization",
+    "manifest_version": 2,
+    "permissions": ["tabs","activeTab","declarativeContent"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+    "page_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+          "matches": [
+            "https://www.facebook.com/*"
+          ],
+          "js": ["content.js","eventrecorder.js","logger.js","virtualpointer.js"]
+          
+        }
+      ]
+ 
+}
