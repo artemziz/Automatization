@@ -45,6 +45,18 @@ chrome.runtime.onMessage.addListener(
           behavior: 'smooth'
       });
       }
+      if(request.Down){
+        window.scrollBy({
+          top: 100,
+          behavior: 'smooth'
+      });
+      }
+      if(request.Up){
+        window.scrollBy({
+          top: -100,
+          behavior: 'smooth'
+      });
+      }
     }
 );
 
@@ -75,7 +87,3 @@ function Visible(target) {
   };
 };
 
-window.addEventListener('scroll',()=>{
-  console.log(window.pageYOffset);
-  
-})

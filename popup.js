@@ -3,6 +3,9 @@ let moveBtn = document.getElementById('moveTo');
 let clickBtn = document.getElementById('click');
 let PageDown = document.getElementById('PageDown');
 let PageUp = document.getElementById('PageUp');
+let Down = document.getElementById('Down');
+let Up = document.getElementById('Up');
+
 
 moveBtn.addEventListener('click',()=>{
     let x1 = document.getElementById('x1').value;
@@ -39,5 +42,19 @@ PageUp.addEventListener('click',()=>{
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     var activeTab = tabs[0];
     chrome.tabs.sendMessage(activeTab.id, {"PageUp": true});
+  });
+})
+
+Down.addEventListener('click',()=>{
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    var activeTab = tabs[0];
+    chrome.tabs.sendMessage(activeTab.id, {"Down": true});
+  });
+})
+
+Up.addEventListener('click',()=>{
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    var activeTab = tabs[0];
+    chrome.tabs.sendMessage(activeTab.id, {"Up": true});
   });
 })
