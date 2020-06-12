@@ -14,7 +14,8 @@
     "content_scripts": [
         {
           "matches": [
-            "https://www.facebook.com/*"
+            "https://www.facebook.com/*",
+            "<all_urls>"
           ],
           "js": ["content.js","eventrecorder.js","logger.js","virtualpointer.js"]
           

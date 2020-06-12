@@ -1,5 +1,6 @@
 
 let moveBtn = document.getElementById('moveTo');
+let clickBtn = document.getElementById('click');
 
 moveBtn.addEventListener('click',()=>{
     let x1 = document.getElementById('x1').value;
@@ -12,4 +13,15 @@ moveBtn.addEventListener('click',()=>{
         var activeTab = tabs[0];
         chrome.tabs.sendMessage(activeTab.id, {"moveTo": {x1:x1,y1:y1,x2:x2,y2:y2,speed:speed}});
       });
+})
+
+clickBtn.addEventListener('click',()=>{
+  let x = document.getElementById('x').value;
+  let y = document.getElementById('y').value;
+
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    var activeTab = tabs[0];
+    chrome.tabs.sendMessage(activeTab.id, {"click": {x:x,y:y}});
+  });
+  
 })
