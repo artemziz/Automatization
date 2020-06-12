@@ -47,7 +47,7 @@ var virtualpointer = function() {
             eventObject.initMouseEvent(type,  true, true, window, detail, screenX, screenY, clientX, clientY, false, false, false, false, button, null);   
         }
         // if element specified, fire event on the element object
-        if (element && typeof(element)=="Node") {
+        if (element) {
             element.dispatchEvent(eventObject);
         // otherwise fire event on document.body
         } else {
@@ -306,7 +306,8 @@ var virtualpointer = function() {
         },
         click_element: function(element) {
             if (!element) return;
-
+            
+            
             build_click_event_queue(element);
             start_processing_events();
         },

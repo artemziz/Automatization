@@ -26,7 +26,10 @@ chrome.runtime.onMessage.addListener(
         }
         console.log(Visible({x,y}) );
         
-        virtualpointer.click_element({x,y});
+        if(document.elementFromPoint(x,y)){
+          document.elementFromPoint(x,y).click();
+        }
+        
         
        
       }
