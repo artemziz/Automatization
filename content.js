@@ -35,13 +35,13 @@ chrome.runtime.onMessage.addListener(
       }
       if(request.PageDown){
         window.scrollBy({
-          top: 0.87*document.documentElement.clientHeight,
+          top: (window.scrollY + window.innerHeight*0.9),
           behavior: 'smooth'
       });
       }
       if(request.PageUp){
         window.scrollBy({
-          top: -0.87*document.documentElement.clientHeight,
+          top: -(window.scrollY + window.innerHeight*0.9),
           behavior: 'smooth'
       });
       }
